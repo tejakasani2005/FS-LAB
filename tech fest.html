@@ -1,0 +1,269 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANITS Tech Fest 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f3f4f7;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(to right, #3a0ca3, #4361ee);
+      color: #fff;
+      padding: 25px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(58, 12, 163, 0.3);
+    }
+    header img {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+    }
+    nav {
+      background: linear-gradient(to right, #4361ee, #4cc9f0);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 14px;
+      box-shadow: 0 3px 10px rgba(67, 97, 238, 0.4);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffea00;
+    }
+    section {
+      padding: 50px 20px;
+    }
+    .about, .contact {
+      background: #e6e6fa;
+      border-radius: 12px;
+      margin: 25px auto;
+      max-width: 900px;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.25);
+    }
+    .events {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      width: 280px;
+      padding: 20px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(58, 12, 163, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(76, 201, 240, 0.25);
+    }
+    .card h3 {
+      color: #3a0ca3;
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(102, 126, 234, 0.25);
+      transition: transform 0.4s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    form {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 6px 16px rgba(76, 201, 240, 0.2);
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      margin-top: 20px;
+      background: linear-gradient(to right, #3a0ca3, #4361ee);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    form button:hover {
+      background: #3f37c9;
+    }
+    footer {
+      background: #3a0ca3;
+      color: #fff;
+      text-align: center;
+      padding: 18px;
+      margin-top: 50px;
+      box-shadow: 0 -4px 10px rgba(58, 12, 163, 0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #3a0ca3;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .events, .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://anits.edu.in/assets/img/logo.png" alt="ANITS Logo">
+  <div>
+    <h1>ANITS Tech Fest 2025</h1>
+    <p>Innovate | Explore | Celebrate</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#technical">Technical</a>
+  <a href="#nontechnical">Non-Technical</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#register">Register</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="about">
+  <h2>About the Fest</h2>
+  <p>
+    Welcome to the annual Tech Fest of <strong>ANITS, Visakhapatnam!</strong><br>
+    Celebrate innovation and creativity with students from across India. Join us in tech competitions, fun events, and networking opportunities.
+  </p>
+</section>
+
+<section id="technical">
+  <h2>Technical Events</h2>
+  <div class="events">
+    <div class="card" onclick="openRegistration('Hackathon')">
+      <h3>Hackathon</h3>
+      <p>Code your way to victory in our overnight coding challenge!</p>
+    </div>
+    <div class="card" onclick="openRegistration('Coding Battle')">
+      <h3>Coding Battle</h3>
+      <p>Compete against the clock and others in solving programming problems.</p>
+    </div>
+    <div class="card" onclick="openRegistration('Paper Presentation')">
+      <h3>Tech Paper Presentation</h3>
+      <p>Showcase your research and ideas to a panel of experts.</p>
+    </div>
+  </div>
+</section>
+
+<section id="nontechnical">
+  <h2>Non-Technical Events</h2>
+  <div class="events">
+    <div class="card" onclick="openRegistration('Treasure Hunt')">
+      <h3>Treasure Hunt</h3>
+      <p>Find clues, solve puzzles, and win hidden treasures!</p>
+    </div>
+    <div class="card" onclick="openRegistration('Debate')">
+      <h3>Debate</h3>
+      <p>Speak up and defend your ideas on trending topics!</p>
+    </div>
+    <div class="card" onclick="openRegistration('Photography')">
+      <h3>Photography</h3>
+      <p>Capture campus moments and creative clicks through your lens.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Campus Gallery</h2>
+  <div class="gallery">
+    <img src="campus.jpg" alt="Campus Front" />
+    <img src="students.jpg" alt="Students" />
+    <img src="library.jpg" alt="Library" />
+    <img src="auditorium.jpg" alt="Auditorium" />
+  </div>
+</section>
+
+<section id="register">
+  <h2>Register for Event</h2>
+  <form>
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" name="event" required />
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <label for="message">Any Message (Optional):</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Submit Registration</button>
+  </form>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:techfest@anits.edu.in">techfest@anits.edu.in</a></p>
+  <p>Phone: +91 9346136125</p>
+  <p>Address: ANITS Campus, Sangivalasa, Visakhapatnam, Andhra Pradesh</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 ANITS Tech Fest. All rights reserved.</p>
+</footer>
+
+<script>
+  function openRegistration(eventName) {
+    document.getElementById('eventName').value = eventName;
+    location.href = "#register";
+  }
+</script>
+
+</body>
+</html>
