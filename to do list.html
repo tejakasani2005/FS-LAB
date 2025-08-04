@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+    }
+    #new-task {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #add-btn {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      background: #ffffff;
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ddd;
+    }
+    li.done {
+      text-decoration: line-through;
+      color: gray;
+    }
+    .delete-btn {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My To-Do List</h2>
+
+  <input type="text" id="new-task" placeholder="Enter new task">
+  <button id="add-btn">Add</button>
+
+  <ul id="task-list"></ul>
+
+  <script>
+    const addBtn = document.getElementById('add-btn');
+    const taskInput = document.getElementById('new-task');
+    const taskList = document.getElementById('task-list');
+
+    addBtn.addEventListener('click', function () {
+      const taskText = taskInput.value.trim();
+
+      if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.textContent = taskText;
+
+      // Toggle done on click
+      li.addEventListener('click', function () {
+        li.classList.toggle('done');
+      });
+
+      // Delete button
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = "Delete";
+      deleteBtn.className = "delete-btn";
+      deleteBtn.onclick = function () {
+        taskList.removeChild(li);
+      };
+
+      li.appendChild(deleteBtn);
+      taskList.appendChild(li);
+
+      taskInput.value = "";
+    });
+  </script>
+
+</body>
+</html>
